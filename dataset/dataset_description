@@ -1,2 +1,3 @@
 datasets have 4 cLasses Alzheimer, mild cognitive impairment, mild cognitive impairment that can be Alzheimer in the future, normal
 format = .nii
+inspect data by use preprocessing_test.py
