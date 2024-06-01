@@ -299,10 +299,10 @@ for epoch in range(num_epochs):
                 # calculate Accuracy
             accuracy = accuracyFUNCTION(listpredicted, listLabels)
             val_loss = val_loss / len(val_loader.dataset)
-            print('Iteration: {}  Loss: {}  Accuracy: {} %'.format(itr, val_loss, accuracy))
+            print('Iteration: {}  Loss: {}  Accuracy: {} %'.format(itr, loss.data, accuracy))
 
             # store loss and accuracy. They'll be required to print the curve.
-            loss_list.append(val_loss)
+            loss_list.append(loss.data)
             accuracy_list.append(accuracy)
     scheduler.step()
 
