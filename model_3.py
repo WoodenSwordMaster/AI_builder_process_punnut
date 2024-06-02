@@ -294,15 +294,15 @@ for epoch in range(num_epochs):
 
                 labels = labels.argmax(-1)
                 loss2 = error(outputs, labels)
-                val_loss += loss2.data * images.size(0)
+                val_loss += loss.item() * images.size(0)
 
                 # calculate Accuracy
             accuracy = accuracyFUNCTION(listpredicted, listLabels)
             val_loss = val_loss / len(val_loader.dataset)
-            print('Iteration: {}  Loss: {}  Accuracy: {} %'.format(itr, loss.data, accuracy))
+            print('Iteration: {}  Loss: {}  Accuracy: {} %'.format(itr, val_loss, accuracy))
 
             # store loss and accuracy. They'll be required to print the curve.
-            loss_list.append(loss.data)
+            loss_list.append(val_loss)
             accuracy_list.append(accuracy)
     scheduler.step()
 
